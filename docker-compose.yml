@@ -4,7 +4,7 @@ services:
     build: .
 #    image: php:7.4-fpm
     volumes:
-      - './src:/var/www/html'
+      - 'C:\Users\efrem\Desktop\4 курс\БД\src\RGR:/var/www/html'
     depends_on:
       - mysql
 
@@ -13,9 +13,9 @@ services:
     ports:
       - "8088:8088"
     volumes:
-      - './src/:/var/www/html'
+      - 'C:\Users\efrem\Desktop\4 курс\БД\src\RGR:/var/www/html'
       - './docker/nginx/conf.d/:/etc/nginx/conf.d'
-      - './src/:/usr/share/nginx/html'
+      - 'C:\Users\efrem\Desktop\4 курс\БД\src\RGR:/usr/share/nginx/html'
     depends_on:
       - mysql
 
