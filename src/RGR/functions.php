@@ -46,4 +46,5 @@ function insertData($conn, $table, $data) {
         return "Ошибка: " . $conn->error;
     }
 }
+
 ?>
