@@ -18,9 +18,14 @@ $tables = getTables($conn);
         <button type="submit">Добавить нового пациента</button>
     </form>
     <br>
+
+    <form method="get" action="add_departaments.php">
+        <button type="submit">Добавить новое отделение</button>
+    </form>
+    <br>
     
     <!-- Форма для выбора таблицы для вставки данных -->
-    <form method="get" action="insert_data.php">
+    <!--<form method="get" action="insert_data.php">
         <label for="table">Таблица:</label>
         <select name="table" id="table">
             <?php foreach ($tables as $table): ?>
@@ -29,7 +34,7 @@ $tables = getTables($conn);
         </select>
         <button type="submit">Выбрать</button>
     </form>
-    <br>
+    <br> -->
     
     <!-- Форма для просмотра таблицы -->
     <form method="get" action="view_table.php">
