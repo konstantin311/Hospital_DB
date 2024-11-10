@@ -13,6 +13,11 @@ $tables = getTables($conn);
 </head>
 <body>
     <h1>Выберите таблицу для работы</h1>
+
+    <form method="get" action="add_patients.php">
+        <button type="submit">Добавить нового пациента</button>
+    </form>
+    <br>
     
     <!-- Форма для выбора таблицы для вставки данных -->
     <form method="get" action="insert_data.php">
