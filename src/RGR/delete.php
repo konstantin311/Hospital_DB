@@ -12,7 +12,15 @@ if (isset($_GET['table'])) {
     $sql = "DELETE FROM $table";
     
     if ($conn->query($sql) === TRUE) {
-        echo "Все данные из таблицы '$table' были успешно удалены.";
+        echo "Все данные из таблицы '$table' были успешно удалены.<br>";
+        
+        // Сбрасываем автоинкремент
+        $sql_reset = "ALTER TABLE $table AUTO_INCREMENT = 1";
+        if ($conn->query($sql_reset) === TRUE) {
+            echo "Автоинкремент для таблицы '$table' был сброшен.<br>";
+        } else {
+            echo "Ошибка при сбросе автоинкремента: " . $conn->error . "<br>";
+        }
     } else {
         echo "Ошибка: " . $conn->error;
     }
