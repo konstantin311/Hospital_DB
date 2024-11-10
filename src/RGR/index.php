@@ -50,5 +50,25 @@ $tables = getTables($conn);
     </form>
     <br>
 
+    <!-- Кнопка для первого запроса -->
+    <form method="get" action="query1.php">
+        <button type="submit">Врачи и пациенты с назначениями в текущем месяце</button>
+    </form>
+    <br>
+
+    <!-- Кнопка для второго запроса -->
+    <form method="get" action="query2.php">
+        <button type="submit">Отделения и количество врачей</button>
+    </form>
+    <br>
+
+    <!-- Форма для третьего запроса с пользовательским вводом -->
+    <form method="get" action="query3.php">
+        <label for="patient_name">Введите имя пациента:</label>
+        <input type="text" name="patient_name" id="patient_name" required>
+        <button type="submit">Показать назначения пациента</button>
+    </form>
+    <br>
+
 </body>
 </html>
