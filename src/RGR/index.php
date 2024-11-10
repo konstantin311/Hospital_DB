@@ -28,6 +28,11 @@ $tables = getTables($conn);
         <button type="submit">Добавить нового врача</button>
     </form>
     <br>
+
+    <form method="get" action="add_appoitments.php">
+        <button type="submit">Добавить прием пациента</button>
+    </form>
+    <br>
     
     <!-- Форма для выбора таблицы для вставки данных -->
     <!--<form method="get" action="insert_data.php">
