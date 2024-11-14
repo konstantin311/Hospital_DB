@@ -10,7 +10,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "Отделение: " . $row['department_name'] . " - Количество врачей: " . $row['doctor_count'] . "<br>";
+        echo "<b>Отделение: </b>" . $row['department_name'] . " - <b>Количество врачей:</b> " . $row['doctor_count'] . "<br>";
     }
 } else {
     echo "Отделения и врачи не найдены.";

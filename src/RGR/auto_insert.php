@@ -4,19 +4,19 @@ include 'functions.php';
 function auto_insert_data($conn) {
     // Данные для каждой таблицы
     $patients = [
-        ['name' => 'Иван Иванов', 'date_of_birth' => '1980-01-01', 'gender' => 'M', 'contact_number' => '1234567890'],
-        ['name' => 'Мария Петрова', 'date_of_birth' => '1990-02-02', 'gender' => 'F', 'contact_number' => '0987654321'],
-        ['name' => 'Петр Сидоров', 'date_of_birth' => '1975-03-03', 'gender' => 'M', 'contact_number' => '1122334455'],
-        ['name' => 'Ольга Васильева', 'date_of_birth' => '1985-04-04', 'gender' => 'F', 'contact_number' => '5566778899'],
-        ['name' => 'Дмитрий Николаев', 'date_of_birth' => '1995-05-05', 'gender' => 'M', 'contact_number' => '9988776655']
+        ['name' => 'Иванов Иван Иванович', 'date_of_birth' => '1980-01-01', 'gender' => 'M', 'contact_number' => '1234567890'],
+        ['name' => 'Петрова Мария Николоевна', 'date_of_birth' => '1990-02-02', 'gender' => 'F', 'contact_number' => '0987654321'],
+        ['name' => 'Сидоров Петр Петрович', 'date_of_birth' => '1975-03-03', 'gender' => 'M', 'contact_number' => '1122334455'],
+        ['name' => 'Васильева Ольга Ивановна', 'date_of_birth' => '1985-04-04', 'gender' => 'F', 'contact_number' => '5566778899'],
+        ['name' => 'Николаев Дмитрий Николаевич', 'date_of_birth' => '1995-05-05', 'gender' => 'M', 'contact_number' => '9988776655']
     ];
 
     $doctors = [
-        ['name' => 'Доктор Смирнов', 'specialization' => 'Кардиолог', 'department_id' => 1],
-        ['name' => 'Доктор Иванова', 'specialization' => 'Хирург', 'department_id' => 2],
-        ['name' => 'Доктор Петров', 'specialization' => 'Терапевт', 'department_id' => 3],
-        ['name' =>'Доктор Сидорова', 'specialization' => 'Офтальмолог', 'department_id' => 4],
-        ['name' =>'Доктор Васильев', 'specialization' => 'Педиатр', 'department_id' => 5]
+        ['name' => 'Смирнов Иван Петрович', 'specialization' => 'Кардиолог', 'department_id' => 1],
+        ['name' => 'Иванова Лидия Петровна', 'specialization' => 'Хирург', 'department_id' => 2],
+        ['name' => 'Петров Петр Петрович', 'specialization' => 'Терапевт', 'department_id' => 3],
+        ['name' =>'Сидорова Дарья Дмитриевна', 'specialization' => 'Офтальмолог', 'department_id' => 4],
+        ['name' =>'Васильев Василий Васильевич', 'specialization' => 'Педиатр', 'department_id' => 5]
     ];
 
     $departments = [

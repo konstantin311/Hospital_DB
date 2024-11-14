@@ -12,7 +12,7 @@ $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "Врач: " . $row['doctor_name'] . " - Пациент: " . $row['patient_name'] . "<br>";
+        echo "<b>Врач:</b> " . $row['doctor_name'] . " - <b>Пациент:</b> " . $row['patient_name'] . "<br>";
     }
 } else {
     echo "Назначений за текущий месяц не найдено.";

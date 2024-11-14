@@ -9,11 +9,11 @@ $tables = getTables($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Выбор таблицы</title>
+    <title>Выбор действия для администрирования Больницы</title>
 </head>
 <body>
-    <h1>Выберите таблицу для работы</h1>
-
+    <h1>Выбор действия для администрирования Больницы</h1>
+    <!--
     <form method="get" action="add_patients.php">
         <button type="submit">Добавить нового пациента</button>
     </form>
@@ -32,8 +32,12 @@ $tables = getTables($conn);
     <form method="get" action="add_appoitments.php">
         <button type="submit">Добавить прием пациента</button>
     </form>
-    <br>
-    
+    <br>  
+-->
+    <form method="get" action="index2.php">
+        <button type="submit">Добавление записей в таблицу</button>
+    </form>
+    <br>  
     <!-- Форма для выбора таблицы для вставки данных -->
     <!--<form method="get" action="insert_data.php">
         <label for="table">Таблица:</label>

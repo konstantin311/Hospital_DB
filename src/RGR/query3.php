@@ -19,9 +19,9 @@ if (empty($patient_name)) {
 
     if ($result->num_rows > 0) {
         while ($row = $result->fetch_assoc()) {
-            echo "Пациент: " . $row['patient_name'] . ", Врач: " . $row['doctor_name'] . 
-                 ", Дата назначения: " . $row['appointment_date'] . 
-                 ", Диагноз: " . $row['diagnosis'] . "<br>";
+            echo "<b>Пациент:</b>" . $row['patient_name'] . ", <b>Врач:</b> " . $row['doctor_name'] . 
+                 ", <b>Дата назначения:</b> " . $row['appointment_date'] . 
+                 ", <b>Диагноз:</b> " . $row['diagnosis'] . "<br>";
         }
     } else {
         echo "Назначения для пациента с именем '$patient_name' не найдены.";
