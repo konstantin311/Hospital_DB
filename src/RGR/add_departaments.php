@@ -11,8 +11,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Проверка имени
     if (empty($name)) {
-        $errors[] = "Поле 'Название отдела' обязательно для заполнения.";
-    }
+        $errors[] = "Поле 'Название отделения' обязательно для заполнения.";
+    } else {
+    if (!preg_match('/^[А-ЯЁ][а-яё]+$/u', $name)) {
+        $errors[] = "Поле 'Название отделения' должно начинаться с заглавной буквы и содержать только буквы.";
+        }
+    }   
 
     // Проверка floor (должен быть от 1 до 10)
     if (empty($floor)) {
@@ -57,13 +61,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Добавить отдел</title>
+    <title>Добавить отделение</title>
 </head>
 <body>
-    <h1>Добавить новый отдел</h1>
+    <h1>Добавить новое отделение</h1>
     <form method="post">
-        <label for="name">Название отдела:</label>
-        <input type="text" id="name" name="name" required><br><br>
+        <label for="name">Название отделения:</label>
+        <input type="text" id="name" name="name" required
+            pattern="[А-ЯЁ][а-яё]+"
+            title="Поле 'Название отделения' должно начинаться с заглавной буквы и содержать только буквы."><br><br>
 
         <label for="floor">Этаж:</label>
         <select id="floor" name="floor" required>
