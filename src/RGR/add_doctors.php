@@ -21,17 +21,24 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Массив ошибок
     $errors = [];
 
-    // Проверка имени (фамилия, имя и отчество с заглавной буквы)
+    // Проверка имени (ФИО с заглавной буквы и с использованием регулярного выражения)
     if (empty($name)) {
         $errors[] = "Поле 'Имя' обязательно для заполнения.";
     } else {
-        // Форматирование имени: заглавные буквы в начале каждого слова
-        $name = ucwords(strtolower($name));
+        // Проверка, что имя соответствует формату "Фамилия Имя Отчество" с заглавными буквами
+        if (!preg_match('/^[А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+$/u', $name)) {
+            $errors[] = "Поле 'Имя' должно содержать Фамилию, Имя и Отчество, начинающиеся с заглавной буквы.";
+        }
     }
 
     // Проверка специализации
-    if (empty($specialization)) {
-        $errors[] = "Поле 'Специализация' обязательно для заполнения.";
+    if (empty($specialization)) { 
+        $errors[] = "Поле 'Специальность' обязательно для заполнения.";
+    } else {
+        // Проверяем, что специальность начинается с заглавной буквы
+        if (!preg_match('/^[А-ЯЁ][а-яё]+$/u', $specialization)) {
+            $errors[] = "Поле 'Специальность' должно начинаться с заглавной буквы и содержать только буквы.";
+        }
     }
 
     // Проверка выбранного отделения
@@ -81,10 +88,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <h1>Добавить нового врача</h1>
     <form method="post">
         <label for="name">ФИО:</label>
-        <input type="text" id="name" name="name" required><br><br>
+        <input type="text" id="name" name="name" required
+               pattern="[А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+"
+               title="ФИО должно содержать три слова с заглавной буквы (Фамилия Имя Отчество)"><br><br>
 
         <label for="specialization">Специальность:</label>
-        <input type="text" id="specialization" name="specialization" required><br><br>
+        <input type="text" id="specialization" name="specialization" required
+               pattern="[А-ЯЁ][а-яё]+"
+               title="Поле 'Специальность' должно начинаться с заглавной буквы и содержать только буквы."><br><br>
 
         <label for="department_id">Отделение:</label>
         <select id="department_id" name="department_id" required>
