@@ -82,9 +82,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Добавить врача</title>
 </head>
 <body>
+<div class="container">
     <h1>Добавить нового врача</h1>
     <form method="post">
         <label for="name">ФИО:</label>
@@ -107,5 +109,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <button type="submit">Добавить</button>
     </form>
+            </div class="container">
 </body>
 </html>

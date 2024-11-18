@@ -13,9 +13,11 @@ $rows = getTableContent($conn, $table);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Просмотр данных из <?= $table ?></title>
 </head>
 <body>
+    <div class="container">
     <h1>Содержимое таблицы: <?= $table ?></h1>
 
     <?php if (empty($rows)): ?>
@@ -40,6 +42,6 @@ $rows = getTableContent($conn, $table);
             </tbody>
         </table>
     <?php endif; ?>
-
+    </div>                        
 </body>
 </html>

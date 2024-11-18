@@ -32,9 +32,11 @@ if (isset($_GET['table'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Удалить все данные из таблицы</title>
 </head>
 <body>
+    <div class="container">
     <h1>Удалить все данные из таблицы</h1>
     
     <!-- Форма для выбора таблицы -->
@@ -54,5 +56,6 @@ if (isset($_GET['table'])) {
     <form method="get" action="index.php">
         <button type="submit">На главный экран</button>
     </form>
+    </div>
 </body>
 </html>

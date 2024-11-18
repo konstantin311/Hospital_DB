@@ -92,12 +92,15 @@ auto_insert_data($conn);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Автоматическое заполнение таблиц</title>
 </head>
 <body>
+<div class="container">
     <h1>Таблицы успешно заполнены!</h1>
     <form method="get" action="index.php">
         <button type="submit">Вернуться на главную</button>
     </form>
+</div>
 </body>
 </html>
