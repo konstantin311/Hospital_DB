@@ -8,12 +8,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $gender = $_POST['gender'] ?? '';
     $contact_number = $_POST['contact_number'] ?? '';
 
-    // Проверка полей
     $errors = [];
     if (empty($name)) {
         $errors[] = "Поле 'Имя' обязательно для заполнения.";
     } else {
-        // Проверка, что имя соответствует формату "Фамилия Имя Отчество" с заглавными буквами
         if (!preg_match('/^[А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+$/u', $name)) {
             $errors[] = "Поле 'Имя' должно содержать Фамилию, Имя и Отчество, начинающиеся с заглавной буквы.";
         }
@@ -24,8 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (empty($contact_number)) {
         $errors[] = "Поле 'Номер телефона' обязательно для заполнения.";
     } else {
-        // Проверка, что номер начинается с "89" и содержит 10 цифр
-        if (!preg_match('/^89\d{8}$/', $contact_number)) {
+        if (!preg_match('/^89\d{9}$/', $contact_number)) {
             $errors[] = "Поле 'Номер телефона' должно начинаться с '89' и содержать ровно 10 цифр.";
         }
     }
@@ -78,7 +75,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         <label for="contact_number">Номер телефона:</label>
         <input type="text" id="contact_number" name="contact_number" required
-               pattern="89\d{8}" title="Номер должен начинаться с 89 и содержать 10 цифр"><br><br>
+               pattern="89\d{9}" title="Номер должен начинаться с 89 и содержать 10 цифр"><br><br>
 
         <button type="submit">Добавить</button>
     </form>

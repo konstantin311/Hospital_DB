@@ -4,11 +4,11 @@ include 'functions.php';
 function auto_insert_data($conn) {
     // Данные для каждой таблицы
     $patients = [
-        ['name' => 'Иванов Иван Иванович', 'date_of_birth' => '1980-01-01', 'gender' => 'M', 'contact_number' => '1234567890'],
-        ['name' => 'Петрова Мария Николоевна', 'date_of_birth' => '1990-02-02', 'gender' => 'F', 'contact_number' => '0987654321'],
-        ['name' => 'Сидоров Петр Петрович', 'date_of_birth' => '1975-03-03', 'gender' => 'M', 'contact_number' => '1122334455'],
-        ['name' => 'Васильева Ольга Ивановна', 'date_of_birth' => '1985-04-04', 'gender' => 'F', 'contact_number' => '5566778899'],
-        ['name' => 'Николаев Дмитрий Николаевич', 'date_of_birth' => '1995-05-05', 'gender' => 'M', 'contact_number' => '9988776655']
+        ['name' => 'Иванов Иван Иванович', 'date_of_birth' => '1980-01-01', 'gender' => 'M', 'contact_number' => '8912345678'],
+        ['name' => 'Петрова Мария Николоевна', 'date_of_birth' => '1990-02-02', 'gender' => 'F', 'contact_number' => '8999887766'],
+        ['name' => 'Сидоров Петр Петрович', 'date_of_birth' => '1975-03-03', 'gender' => 'M', 'contact_number' => '8911223344'],
+        ['name' => 'Васильева Ольга Ивановна', 'date_of_birth' => '1985-04-04', 'gender' => 'F', 'contact_number' => '8955500011'],
+        ['name' => 'Николаев Дмитрий Николаевич', 'date_of_birth' => '1995-05-05', 'gender' => 'M', 'contact_number' => ' 8900112233']
     ];
 
     $doctors = [

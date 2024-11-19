@@ -36,18 +36,6 @@ $tables = getTables($conn);
         </div>
 
         <div class="section">
-            <form method="get" action="auto_insert.php">
-                <button type="submit">Автоматически заполнить таблицы</button>
-            </form>
-        </div>
-
-        <div class="section">
-            <form method="get" action="delete.php">
-                <button type="submit">Удаление всех данных из таблицы</button>
-            </form>
-        </div>
-
-        <div class="section">
             <form method="get" action="query1.php">
                 <button type="submit">Врачи и пациенты с назначениями в текущем месяце</button>
             </form>

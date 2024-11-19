@@ -3,7 +3,6 @@ include 'config.php';
 
 $patient_name = trim($_GET['patient_name'] ?? '');
 
-// Проверка, что пользователь ввел имя пациента
 if (empty($patient_name)) {
     echo "Введите имя пациента.";
 } else {

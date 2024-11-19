@@ -1,7 +1,6 @@
 <?php
 include 'config.php';
 
-// Получение списка отделений из базы данных
 $sql_departments = "SELECT department_id, name FROM Departments";
 $result_departments = $conn->query($sql_departments);
 $departments = [];
@@ -12,55 +11,45 @@ if ($result_departments->num_rows > 0) {
     }
 }
 
-// Проверка, если форма отправлена
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $name = $_POST['name'] ?? '';
     $specialization = $_POST['specialization'] ?? '';
     $department_id = $_POST['department_id'] ?? '';
 
-    // Массив ошибок
+
     $errors = [];
 
-    // Проверка имени (ФИО с заглавной буквы и с использованием регулярного выражения)
+
     if (empty($name)) {
         $errors[] = "Поле 'Имя' обязательно для заполнения.";
     } else {
-        // Проверка, что имя соответствует формату "Фамилия Имя Отчество" с заглавными буквами
         if (!preg_match('/^[А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+ [А-ЯЁ][а-яё]+$/u', $name)) {
             $errors[] = "Поле 'Имя' должно содержать Фамилию, Имя и Отчество, начинающиеся с заглавной буквы.";
         }
     }
 
-    // Проверка специализации
     if (empty($specialization)) { 
         $errors[] = "Поле 'Специальность' обязательно для заполнения.";
     } else {
-        // Проверяем, что специальность начинается с заглавной буквы
         if (!preg_match('/^[А-ЯЁ][а-яё]+$/u', $specialization)) {
             $errors[] = "Поле 'Специальность' должно начинаться с заглавной буквы и содержать только буквы.";
         }
     }
 
-    // Проверка выбранного отделения
     if (empty($department_id)) {
         $errors[] = "Поле 'Отделение' обязательно для выбора.";
     }
 
-    // Если нет ошибок, выполняем вставку
     if (empty($errors)) {
-        // Подготовка SQL-запроса для вставки
         $sql = "INSERT INTO Doctors (name, specialization, department_id) VALUES (?, ?, ?)";
         $stmt = $conn->prepare($sql);
 
-        // Проверка на успешную подготовку запроса
         if ($stmt === false) {
             die('Ошибка при подготовке запроса: ' . $conn->error);
         }
 
-        // Привязываем параметры (s - строка, i - целое число)
         $stmt->bind_param("ssi", $name, $specialization, $department_id);
 
-        // Выполнение запроса
         if ($stmt->execute()) {
             echo "<p>Доктор успешно добавлен!</p>";
         } else {
@@ -69,7 +58,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         $stmt->close();
     } else {
-        // Вывод ошибок
         foreach ($errors as $error) {
             echo "<p style='color:red;'>$error</p>";
         }
